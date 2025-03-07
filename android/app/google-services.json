@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198626574676",
+    "project_id": "alw-alw",
+    "storage_bucket": "alw-alw.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198626574676:android:e8a47fc79bcfc6297c48c1",
+        "android_client_info": {
+          "package_name": "com.example.alw_alw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwbjmeRKZZsFHPUR3mPXRWO6MhITLy50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
