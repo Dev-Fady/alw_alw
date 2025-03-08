@@ -1,4 +1,7 @@
+// import 'package:alw_alw/features/home/presentation/view/home_view.dart';
+import 'package:alw_alw/core/cache/cache_helper.dart';
 import 'package:alw_alw/features/home/presentation/view/home_view.dart';
+import 'package:alw_alw/features/login/presentation/login_view.dart';
 import 'package:alw_alw/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +16,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  final sharedPrefs = CacheHelper();
+  await sharedPrefs.init();
 
   /// 1.1.2: set navigator key to ZegoUIKitPrebuiltCallInvitationService
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
@@ -31,14 +37,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sharedPrefs = CacheHelper();
+    final isLoggedIn = sharedPrefs.getData(key: 'isLoggedIn') ?? false;
+
     return MaterialApp(
       navigatorKey: navigatorKey,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeView(),
+      home: isLoggedIn ? HomeView() : LoginView(),
     );
   }
 }
