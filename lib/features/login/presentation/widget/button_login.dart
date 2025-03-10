@@ -1,6 +1,7 @@
 import 'package:alw_alw/core/cache/cache_helper.dart';
 import 'package:alw_alw/core/services/zego_service/zego_service.dart';
-import 'package:alw_alw/features/home/presentation/view/home_view.dart';
+import 'package:alw_alw/features/add_pepole/presentation/view/add_pepole_view.dart';
+// import 'package:alw_alw/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
 
 class ButtonLogin extends StatelessWidget {
@@ -37,7 +38,7 @@ class ButtonLogin extends StatelessWidget {
                 .saveData(key: 'isLoggedIn', value: true);
             Navigator.of(context).pushReplacement(MaterialPageRoute(
               builder: (context) {
-                return HomeView();
+                return AddPepoleView();
               },
             ));
           }
