@@ -28,6 +28,7 @@ dependencies:
 
 # ^ ui
   cached_network_image: ^3.3.1
+  google_nav_bar: ^5.0.7
 
   flutter:
     sdk: flutter
