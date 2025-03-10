@@ -11,6 +11,10 @@ dependencies:
 # ^ core
   faker: 2.2.0
   shared_preferences: ^2.5.2
+  dartz: ^0.10.1
+
+# ^ Bloc
+  flutter_bloc: ^8.1.6
 
 # ^ zego cloud
   zego_uikit_signaling_plugin: ^2.8.11
