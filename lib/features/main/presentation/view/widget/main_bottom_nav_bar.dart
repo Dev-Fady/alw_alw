@@ -46,12 +46,12 @@ class MainBottomNavBar extends StatelessWidget {
             color: Colors.black,
             tabs: [
               _buildGButton(
-                'Add Peppole',
-                Icons.add_ic_call_outlined,
+                'Call Pepole',
+                Icons.wifi_calling_3_outlined,
               ),
               _buildGButton(
-                'المنتجات',
-                Icons.add_a_photo,
+                'Add Pepole',
+                Icons.add_ic_call_outlined,
               ),
             ],
             selectedIndex: selectedIndex,

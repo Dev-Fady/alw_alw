@@ -1,4 +1,5 @@
 import 'package:alw_alw/features/add_pepole/presentation/view/add_pepole_view.dart';
+import 'package:alw_alw/features/home/presentation/view/home_view.dart';
 import 'package:alw_alw/features/main/presentation/view/widget/main_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +15,8 @@ class _MainViewState extends State<MainView> {
 
   // قائمة الصفحات
   static final List<Widget> _widgetOptions = <Widget>[
+    HomeView(),
     const AddPepoleView(),
-    
   ];
 
   // تغيير الصفحة عند الضغط
