@@ -36,7 +36,7 @@ class _AddPepoleViewState extends State<AddPepoleView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Add Pepole'),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
         actions: [
