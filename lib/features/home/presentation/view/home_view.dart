@@ -25,6 +25,10 @@ class _HomeViewState extends State<HomeView> {
       userID: prefs.getData(key: 'id'),
       userName: prefs.getData(key: 'userName'),
     );
+
+    Future.microtask(() {
+      context.read<HomeCubit>().getUser();
+    });
   }
 
   void _logout(BuildContext context) {
