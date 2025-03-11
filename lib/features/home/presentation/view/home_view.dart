@@ -1,6 +1,8 @@
 import 'package:alw_alw/core/cache/cache_helper.dart';
 import 'package:alw_alw/core/services/zego_service/zego_service.dart';
+import 'package:alw_alw/features/home/presentation/manger/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../login/presentation/login_view.dart';
 import 'widget/body_home_view.dart';
@@ -48,7 +50,17 @@ class _HomeViewState extends State<HomeView> {
           )
         ],
       ),
-      body: BodyHomeView(),
+      body: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          if (state is HomeLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is HomeSuccess) {
+            return BodyHomeView(users: state.users);
+          } else {
+            return const Center(child: Text('Error'));
+          }
+        },
+      ),
     );
   }
 }

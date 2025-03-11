@@ -1,14 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:alw_alw/features/add_pepole/domain/entites/add_pepole_entity.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 
+import 'package:alw_alw/features/add_pepole/domain/entites/add_pepole_entity.dart';
+
 class BodyHomeView extends StatelessWidget {
-  final List<AddPepoleEntity> users = [
-    AddPepoleEntity(iD: "1", userName: "Ahmed"),
-    AddPepoleEntity(iD: "2", userName: "Mohamed"),
-    AddPepoleEntity(iD: "3", userName: "Salah"),
-    // Add more users here...
-  ];
+
+  final List<AddPepoleEntity> users;
+  const BodyHomeView({
+    Key? key,
+    required this.users,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
