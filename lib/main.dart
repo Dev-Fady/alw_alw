@@ -2,6 +2,8 @@ import 'package:alw_alw/core/cache/cache_helper.dart';
 import 'package:alw_alw/core/services/firebase/firestore_service.dart';
 import 'package:alw_alw/features/add_pepole/data/repo/add_pepole_repo_impl.dart';
 import 'package:alw_alw/features/add_pepole/presentation/manger/cubit/add_pepole_cubit.dart';
+import 'package:alw_alw/features/home/data/repo/home_repo_impl.dart';
+import 'package:alw_alw/features/home/presentation/manger/cubit/home_cubit.dart';
 import 'package:alw_alw/features/login/presentation/login_view.dart';
 import 'package:alw_alw/features/main/presentation/view/main_view.dart';
 import 'package:alw_alw/firebase_options.dart';
@@ -43,9 +45,17 @@ class MyApp extends StatelessWidget {
     final sharedPrefs = CacheHelper();
     final isLoggedIn = sharedPrefs.getData(key: 'isLoggedIn') ?? false;
 
-    return BlocProvider(
-      create: (context) => AddPepoleCubit(
-          AddPepoleRepoImpl(firestoreService: FirestoreService())),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AddPepoleCubit(
+              AddPepoleRepoImpl(firestoreService: FirestoreService())),
+        ),
+        BlocProvider(
+          create: (context) =>
+              HomeCubit(HomeRepoImpl(firestoreService: FirestoreService()))..getUser(),
+        ),
+      ],
       child: MaterialApp(
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
